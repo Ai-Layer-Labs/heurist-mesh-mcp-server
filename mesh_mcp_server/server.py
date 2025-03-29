@@ -353,8 +353,8 @@ class MeshToolServer:
         starlette_app = Starlette(
             debug=True,
             routes=[
-                Route("/sse", endpoint=handle_sse),
-                Mount("/messages/", app=sse.handle_post_message),
+                Route(f"{base_path}/sse", endpoint=handle_sse),
+                Mount(f"{base_path}/sse", app=sse.handle_post_message),
             ],
         )
 
