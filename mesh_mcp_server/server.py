@@ -354,7 +354,7 @@ class MeshToolServer:
             debug=True,
             routes=[
                 Route(f"{base_path}/sse", endpoint=handle_sse),
-                Mount(f"{base_path}/sse", app=sse.handle_post_message),
+                Mount(f"{base_path}/messages", app=sse.handle_post_message),
             ],
         )
 
